@@ -1,0 +1,14 @@
+# Site settings
+title: Five Dials
+email: your_email@example.com
+author: Hamish Hamilton
+description: "Words 'n' stuff"
+baseurl: ""
+url: "http://fivedials.com/fivedials"
+google_analytics:
+animated: false
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+paginate: 3
