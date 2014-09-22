@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="home">
+  <div class="posts">
+    {% for author in site.data.authors %}
+      <div class="post {% if site.animated %}animated fade-in-down{% endif %}">
+          <h3 class="h2 post-title">{{ author.name }}</h3>
+          {% for post in site.posts %}
+            {% if post.author == author.name %}
+            <a class="post-summary" href="{{ post.url }}">{{ post.title }}</a>
+            {% endif %}
+          {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include pagination.html %}
+
+  <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>-->
+</div>
