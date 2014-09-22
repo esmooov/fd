@@ -1,0 +1,11 @@
+- number: 30
+  title: A Stranger Again
+  subtitle: The Camus Issue
+  pieces:
+      - link: 2014-09-11-camus-letter.md
+      - link: 2014-09-11-camus-summer.md
+
+- number: 29
+  title: Weight To Lift
+  subtitle:
+  pieces:
