@@ -257,7 +257,12 @@ p{
     margin-bottom:1.5em;
 }
 
-
+h3.author{
+    font-style:italic;
+    font-weight:100;
+    margin-top:-30px;
+    font-size:1.3em;
+}
 
 @media screen and (max-width: 48em) {
   .h1,

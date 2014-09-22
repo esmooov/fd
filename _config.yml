@@ -4,7 +4,7 @@ email: your_email@example.com
 author: Hamish Hamilton
 description: "Words 'n' stuff"
 baseurl: ""
-url: "http://fivedials.com/fivedials"
+url: "http://fivedials.com.s3-website-us-east-1.amazonaws.com/"
 google_analytics:
 animated: false
 

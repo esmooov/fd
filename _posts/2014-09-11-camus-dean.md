@@ -2,7 +2,7 @@
 layout:     post
 title:      On Tony, On Dean, On Camus, On Algiers
 date:       2014-06-11 15:31:19
-summary:    A Letter from the Editor
+summary:    The illustrations adorning Five Dials 30 came to us via a circuitous route. They were spray-painted on walls and tunnels and bits of concrete in Paris by a collective of Algerian-French artists known as the Zoo Project.
 type:       A Letter from the Editor
 categories: n030
 ---
