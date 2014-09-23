@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="posts">
+  {% for piece in page.pieces %}
+      <div class="post">
+      {% if piece.type == "Image" %}
+        <img class="full-post" src="{{ piece.summary }}"/>
+      {% else %}
+        <a href="{{ piece.url | prepend: site.baseurl }}" class="post-link">
+          <h4 class="subtitle">{{ piece.type }}</h4>
+          <h1 class="py2">{{ piece.title }}</h1>
+          <h3 class="author">By {{piece.author}}</h3>
+
+          <article class="post-summary">{{ piece.content }}</article>
+
+        </a>
+      {% endif %}
+
+    </div>
+  {% endfor %}
+</div>

@@ -265,6 +265,17 @@ h3.author, h3.subtitle{
     font-size:1.3em;
 }
 
+a.issue-link{
+    color: hsl(0, 0%, 20%);
+    border-bottom: 1px solid #ddd;
+    display:block;
+    margin-bottom:1em;
+}
+
+a.post-link{
+    color: hsl(0, 0%, 20%);
+}
+
 @media screen and (max-width: 48em) {
   .h1,
   h1 {
