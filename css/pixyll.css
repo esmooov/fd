@@ -276,6 +276,21 @@ a.post-link{
     color: hsl(0, 0%, 20%);
 }
 
+.issue-header{
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    margin-bottom:3em;
+}
+.issue-header h2.issue-title{
+    font-size:3.5em;
+    font-weight:100;
+    margin-bottom:0.6em;
+}
+
+.issue-header h3.subtitle{
+    font-size:1em;
+}
+
 @media screen and (max-width: 48em) {
   .h1,
   h1 {

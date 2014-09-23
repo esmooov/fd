@@ -9,6 +9,7 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'issue_index.html')
       self.data['issue'] = issue
+      puts issue
       if issue['pieces']
         self.data['pieces'] = issue['pieces'].map{|p| site.data['post_hash'][p['link']]}
       else

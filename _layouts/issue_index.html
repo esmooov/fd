@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<div class="issue-header">
+    <h4 class="issue-num">Number {{ page.issue.number }}</h4>
+    <h2 class="h2 issue-title">{{ page.issue.title }}</h4>
+    <h3 class="subtitle">{{ page.issue.subtitle }}</h3>
+</div>
 <div class="posts">
   {% for piece in page.pieces %}
       <div class="post">
@@ -10,7 +15,9 @@ layout: default
         <a href="{{ piece.url | prepend: site.baseurl }}" class="post-link">
           <h4 class="subtitle">{{ piece.type }}</h4>
           <h1 class="py2">{{ piece.title }}</h1>
-          <h3 class="author">By {{piece.author}}</h3>
+          {% if piece.author %}
+            <h3 class="author">By {{piece.author}}</h3>
+          {% endif %}
 
           <article class="post-summary">{{ piece.content }}</article>
 
