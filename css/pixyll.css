@@ -276,6 +276,16 @@ a.post-link{
     color: hsl(0, 0%, 20%);
 }
 
+h1.py2{
+    padding-bottom:0;
+}
+h5.minititle{
+    font-size:1em;
+    font-weight:100;
+    font-style:italic;
+    margin-bottom:3.5em;
+}
+
 .issue-header{
     text-align:center;
     border-bottom:1px solid #ddd;

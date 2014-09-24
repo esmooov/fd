@@ -15,6 +15,7 @@ layout: default
         <a href="{{ piece.url | prepend: site.baseurl }}" class="post-link">
           <h4 class="subtitle">{{ piece.type }}</h4>
           <h1 class="py2">{{ piece.title }}</h1>
+          <h5 class="minititle">{{piece.subtitle}}</h3>
           {% if piece.author %}
             <h3 class="author">By {{piece.author}}</h3>
           {% endif %}

@@ -4,8 +4,11 @@ layout: default
 <div class="post-header mb2">
   <h4 class="subtitle">{{ page.type }}</h4>
   <h1 class="py2">{{ page.title }}</h1>
+  {% if page.subtitle %}
+    <h5 class="minititle">{{page.subtitle}}</h3>
+  {% endif %}
   {% if page.author %}
-  <h3 class="author">By {{page.author}}</h3>
+    <h3 class="author">By {{page.author}}</h3>
   {% endif %}
 </div>
 
