@@ -13,19 +13,4 @@ layout: default
   {{ content }}
 </article>
 
-<script>
-    FD = {};
-    FD.fitBleeds = function(){
-        $("img.full-bleed").each(function(){
-            var document_width = $(document).width(),
-                image_width = $(this).width(),
-                image_height = $(this).height(),
-                measure_width = $(".measure").width(),
-                margin = (document_width - measure_width)/2;
-            $(this).css({width: document_width, "margin-left": "-" + margin + "px"});
-        })
-    }
-    $(function(){
-        FD.fitBleeds() 
-    })
-</script>
+{% include fd.html %}
