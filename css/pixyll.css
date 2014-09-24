@@ -300,14 +300,70 @@ h5.minititle{
     border-bottom:1px solid #ddd;
     margin-bottom:3em;
 }
+.issue-image{
+    width:80%;
+}
 .issue-header h2.issue-title{
-    font-size:3.5em;
+    font-size:25px;
     font-weight:100;
-    margin-bottom:0.6em;
+    font-style:italic;
+    margin-bottom:46px;
 }
 
-.issue-header h3.subtitle{
-    font-size:1em;
+.issue-header h3.issue-subtitle{
+    font-size:18px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.issue-header h4.issue-num{
+    margin-bottom:14px; 
+}
+
+ul.issue-contents{
+    list-style:none;
+}
+
+ul.issue-contents li{
+    margin-bottom:18px;
+}
+
+.issue-content-author{
+    text-transform:uppercase;
+    font-style:underline;
+    display:inline-block;
+    margin-right:10px;
+    letter-spacing:4px;
+    text-decoration:underline;
+}
+
+.issue-content-title{
+    font-style:italic;
+    display:inline-block;
+    margin-left:10px;
+}
+
+p.issue-intro-note{
+    margin-top:52px;
+    margin-bottom:60px;
+    font-style:italic;
+    font-size:20px;
+}
+img.hh-mark{
+    width:145px;
+}
+.contributor-block{
+    border-top:1px solid #ddd;
+    padding-top:62px;
+}
+.contributor-header{
+    text-transform:uppercase;
+    margin-bottom:40px;
+    letter-spacing:4px;
+}
+div.contributor-text{
+    text-align:left;
+    font-size:24px;
 }
 
 img.full-bleed{

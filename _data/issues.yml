@@ -1,6 +1,21 @@
 - number: 30
   title: A Stranger Again
   subtitle: The Camus Issue
+  intro_art: http://d1r5nr1emc2xy5.cloudfront.net/pics/41237
+  intro_pieces:
+      - title: The Complicated Legacy
+        author: Curtis Gillespie
+      - title: The Death Drive
+        author: Deborah Levy
+      - title: Summer in Algiers
+        author: Albert Camus
+  intro_note: "... Plus: rotated, distorted, warped street art & Camus’s handwriting."
+  contributors: 
+      - "Albert Camus was born in Mondovi, Algeria, in 1913. An avid sportsman, Camus claimed to have learned all he knew about morality and the obligations of men from football. He preferred to write whilst standing up and was awarded the Nobel Prize for Literature in 1957. While on a trip to the United States, Camus visited the New York Zoo twenty times. He was also the owner of a cat called Cigarette."
+      
+      - "Curtis Gillespie is the author of five books, including the memoirs Almost There and Playing Through, and the novel Crown Shyness. Gillespie has won three National Magazine Awards in Canada for his writing on politics, science and the arts. In 2010 he co-founded the award-winning narrative journalism magazine Eighteen Bridges, which he also edits. Like Camus, he was a football goalkeeper. He played for the University of Alberta in the early eighties."
+      
+      - "Deborah Levy is the author of many works, including, Billy & Girl, The Unloved and Swallowing Geography. In 2012 her novel Swimming Home was shortlisted for the Man Booker Prize. Having trained at Darlington College of Arts, she left to become a playwright, creating work for the Royal Shakespeare Company among others. Levy was a Fellow in Creative Arts at Trinity College, Cambridge. Her most recent essay, Things I Don’t Want to Know, is a response to George Orwell’s Why I Write and her next novel, Hot Milk, will be published by Hamish Hamilton in 2015."
   pieces:
       - link: 2014-09-11-camus-dean.md
       - link: 2014-09-11-camus-letter.md
