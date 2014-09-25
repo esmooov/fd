@@ -2,9 +2,28 @@
 layout: default
 ---
 <div class="issue-header">
+    <img class="issue-image" src="{{ page.issue.intro_art }}"/>
     <h4 class="issue-num">Number {{ page.issue.number }}</h4>
-    <h2 class="h2 issue-title">{{ page.issue.title }}</h4>
-    <h3 class="subtitle">{{ page.issue.subtitle }}</h3>
+    <h2 class="issue-title">{{ page.issue.title }}</h2>
+    <h3 class="issue-subtitle">{{ page.issue.subtitle }}</h3>
+    <ul class="issue-contents">
+        {% for ip in page.issue.intro_pieces %}
+            <li class="issue-content">
+                <span class="issue-content-author">{{ ip.author }}</span>
+                <span class="issue-content-title">{{ ip.title }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <p class="issue-intro-note">{{ page.issue.intro_note }} </p>
+    <img class="hh-mark" src="http://d1r5nr1emc2xy5.cloudfront.net/pics/41244"/>
+    <div class="contributor-block">
+        <div class="contributor-header">Contributors</div>
+        <div class="contributor-text">
+            {% for contributor in page.issue.contributors %}
+                <p>{{contributor}}</p>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <div class="posts">
   {% for piece in page.pieces %}

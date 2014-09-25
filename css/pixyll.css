@@ -105,7 +105,7 @@ body {
 }
 
 .post-link .post-title {
-  margin-top: 0;
+  margin-top: 0.5em;
   font-weight: 600;
   color: #333;
 }
@@ -249,21 +249,10 @@ h6,
   margin-bottom: 2em;
 }
 
-h1{
-    margin-bottom: 0.2em;
-}
-.h2{ margin-bottom: 1em; }
-
 p{
     margin-bottom:1.5em;
 }
 
-h3.author, h3.subtitle{
-    font-style:italic;
-    font-weight:100;
-    margin-top:-30px;
-    font-size:1.3em;
-}
 
 a.issue-link{
     color: hsl(0, 0%, 20%);
@@ -276,14 +265,34 @@ a.post-link{
     color: hsl(0, 0%, 20%);
 }
 
+h1{
+    margin-bottom: 0.2em;
+    font-size: 72px;
+    font-family: "Cardo", "PT Serif", Georgia, "Times New Roman", serif;
+    font-weight:300;
+}
+.h2{ margin-bottom: 1em; }
 h1.py2{
-    padding-bottom:0;
+    margin-bottom:20px;
+}
+h3.author, h3.subtitle{
+    font-style:italic;
+    font-weight:100;
+    margin-top:-30px;
+    font-size:32px;
+}
+h4{
+    font-size: 22px;
+    font-weight:normal;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-family: "Cardo", "PT Serif", Georgia, "Times New Roman", serif;
 }
 h5.minititle{
-    font-size:1em;
+    font-size:32px;
     font-weight:100;
     font-style:italic;
-    margin-bottom:3.5em;
+    margin-bottom:52px;
 }
 
 .issue-header{
@@ -291,14 +300,70 @@ h5.minititle{
     border-bottom:1px solid #ddd;
     margin-bottom:3em;
 }
+.issue-image{
+    width:80%;
+}
 .issue-header h2.issue-title{
-    font-size:3.5em;
+    font-size:25px;
     font-weight:100;
-    margin-bottom:0.6em;
+    font-style:italic;
+    margin-bottom:46px;
 }
 
-.issue-header h3.subtitle{
-    font-size:1em;
+.issue-header h3.issue-subtitle{
+    font-size:18px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.issue-header h4.issue-num{
+    margin-bottom:14px; 
+}
+
+ul.issue-contents{
+    list-style:none;
+}
+
+ul.issue-contents li{
+    margin-bottom:18px;
+}
+
+.issue-content-author{
+    text-transform:uppercase;
+    font-style:underline;
+    display:inline-block;
+    margin-right:10px;
+    letter-spacing:4px;
+    text-decoration:underline;
+}
+
+.issue-content-title{
+    font-style:italic;
+    display:inline-block;
+    margin-left:10px;
+}
+
+p.issue-intro-note{
+    margin-top:52px;
+    margin-bottom:60px;
+    font-style:italic;
+    font-size:20px;
+}
+img.hh-mark{
+    width:145px;
+}
+.contributor-block{
+    border-top:1px solid #ddd;
+    padding-top:62px;
+}
+.contributor-header{
+    text-transform:uppercase;
+    margin-bottom:40px;
+    letter-spacing:4px;
+}
+div.contributor-text{
+    text-align:left;
+    font-size:24px;
 }
 
 img.full-bleed{
@@ -308,7 +373,7 @@ img.full-bleed{
 @media screen and (max-width: 48em) {
   .h1,
   h1 {
-    font-size: 2.827rem;
+      font-size:54px;
   }
 
   .h2,
@@ -318,12 +383,23 @@ img.full-bleed{
 
   .h3,
   h3 {
-    font-size: 1.413rem;
+      font-size: 24px; 
   }
 
   .h4,
   h4 {
-    font-size: 1rem;
+      font-size:16px;
+  }
+
+  h3.author{
+    font-size:24px;
+  }
+
+  h5.minititle{
+      font-size: 24px; 
+  }
+  
+  p{
   }
 
   .site-header {
@@ -349,7 +425,6 @@ img.full-bleed{
 
   .h1,
   h1 {
-    font-size: 3.250rem;
   }
 
   .h2,
@@ -364,7 +439,6 @@ img.full-bleed{
 
   .h4,
   h4 {
-    font-size: 1.150rem;
   }
 
   .p,
@@ -398,9 +472,6 @@ img.full-bleed{
 @media screen and (min-width: 64em) {
   .h1,
   h1 {
-    font-size: 4.8rem;
-    font-family: "Cardo", "PT Serif", Georgia, "Times New Roman", serif;
-    font-weight:300;
   }
 
   .h2,
@@ -415,11 +486,6 @@ img.full-bleed{
 
   .h4,
   h4 {
-    font-size: 1.2rem;
-    font-weight:normal;
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-family: "Cardo", "PT Serif", Georgia, "Times New Roman", serif;
 
   }
 
