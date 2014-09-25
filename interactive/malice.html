@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<style>
+    .black{
+        display:block;
+        position:absolute;
+        bottom:0;
+        top:0;
+        left:0;
+        background:black;
+    }
+    .black-shell{
+        display:inline-block;
+        position:relative;
+    }
+</style>
+
+<div class="post-header mb2">
+  <h4 class="subtitle">Missive</h4>
+  <h1 class="py2">My One True Dream in Life</h1>
+</div>
+
+<article class="post-content">
+  <p>
+  It’s funny, you’d think realizing your one true dream in life would be a watershed … pivotal moment <span id="pivot">in</span> the greatest hits compilation of your life, but I just realized my dream a minute ago and I’ve already forgotten what I was doing when it happened. At least I remember my dream, though, which is as follows: That someone will read this whole thing and understand and we’ll be friends and love each other. Then we’ll get married and move to some quaint, progressive town in Maine or New Hampshire or something and I’ll be an English teacher and you’ll be a waitress at a coffee shop and you’ll look “cute” in your uniform which will be one of those old-fashioned ones, naturally,
+  </p>
+
+  <p id="crying" class="black-shell">
+      <span class="black"></span>
+      Crying. Crying. I heard crying!
+  </p>
+
+  <p>
+      and I’ll come in every now and again and drink coffee even though I don’t really like coffee that much and be friendly but shy with your coworkers and grade papers or something while you’re working and when you’re on your break we’ll sit and drink coffee together1 and talk about how our days have been going and how much we’re looking forward to something, because, God, I want something to look forward to. We’ll do this for a while and then we’ll gradually stop. We’ll see less of each other for one reason or another and basically become more like friends who sleep together and fuck when so inclined2 but otherwise carry on about their business3. I don’t know that we’ve fallen out of love. I think it’s more like we know it was and is there so we can feel it whenever we want to.
+  </p>
+
+</article>
+
+<script>
+    Dream = {
+        alternateRandomly: function(el,speed,prob,left,right){
+            var interval = Math.random() * 1000 * speed;
+                choice = Math.random() > prob ? right : left;
+            setTimeout(function(){
+                el.text(choice);
+                Dream.alternateRandomly(el,speed,prob,left,right)
+            },interval);
+        },
+        blacken: function(el,offset){
+            var scroll_top = $(window).scrollTop(),
+                height = $(window).height(),
+                bottom = scroll_top + height,
+                position = el.offset().top,
+                pct_in_view;
+            if(bottom < position){
+                pct_in_view = 0;
+            } else if(scroll_top > position) {
+                pct_in_view = 1;
+            } else {
+                pct_in_view = (bottom - position)/height;
+            }
+            el.find(".black").css({width: 100 * pct_in_view + "%"});
+        }
+    };
+    $(function(){
+        Dream.alternateRandomly($("#pivot"),0.5,0.8,"in","on");
+        $(window).on("scroll",_.throttle(function(){
+            Dream.blacken($("#crying"));
+        },50))
+    });
+</script>
