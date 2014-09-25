@@ -25,11 +25,18 @@ layout: default
     .post-content{
         padding-bottom:800px;
     }
-    
-    #end{
-        display:inline-block;
-        position:relative;
+    .footnotes{
+        font-style:italic;
+        font-size:18px;
     }
+    #stop-black{
+        width:60px;
+        display:inline-block;
+        height:0;
+        background-color:black;
+        position:absolute;
+    }
+    
 </style>
 
 <div class="post-header mb2">
@@ -39,7 +46,7 @@ layout: default
 
 <article class="post-content">
   <p>
-  It’s funny, you’d think realizing your <span id="true" class="block-shell"><span class="white"></span>one true dream in</span> life would be a watershed … pivotal moment <span id="pivot">in</span> the greatest hits compilation of your life, but I just realized my dream a minute ago and I’ve already forgotten what I was doing when it happened. At least I remember my dream, though, which is as follows: That someone will read <span id="whole" class="block-shell"><span class="white">(the endnotes!!)</span>this whole thing</span> and understand and we’ll be friends and love each other. Then we’ll get married and move to some quaint, <span id="white" class="block-shell"><span class="black">white-ish</span>progressive</span> town in Maine or New Hampshire or something and I’ll be an English teacher and you’ll be a waitress at a coffee shop and you’ll look “cute” in your uniform which will be one of those old-fashioned ones, naturally,
+  It’s funny, you’d think realizing your <span id="true" class="block-shell"><span class="white"></span>one true dream in</span> life would be a watershed … pivotal moment <span id="pivot">in</span> the greatest hits compilation of your life, but I just realized my dream a minute ago and I’ve already forgotten what I was doing when it happened. At least I remember my dream, though, which is as follows: That someone will read <span id="whole" class="block-shell"><span class="white">(the endnotes!!)</span>this whole thing</span> and understand and we’ll be friends and love each other. Then we’ll get married and move to some quaint, <span id="white" class="block-shell"><span class="black">white-ish</span>progressive</span> town in Maine or New Hampshire or something and I’ll be an English teacher and you’ll be a waitress at a <span id="coffee" class="block-shell"><span class="white">cool bar?</span>coffee shop</span> and you’ll look “cute” in your uniform which will be one of those old-fashioned ones, naturally,
   </p>
 
   <p id="crying" class="block-shell">
@@ -48,7 +55,15 @@ layout: default
   </p>
 
   <p>
-  and I’ll come in every now and again and drink coffee even though I don’t really like coffee that much and be friendly but shy with your coworkers and grade papers or something while you’re working and when you’re on your break we’ll sit and drink coffee together<sup>1</sup> and talk about how our days have been going and how much we’re looking forward to something, because, God, <span id="something">I want something to look forward to.</span> We’ll do this for a while and then we’ll gradually stop. <span id="end">We’ll see less of each other for one reason or another and basically become more like friends who sleep together and fuck when so inclined<sup>2</sup> but otherwise carry on about their business<sup>3</sup>. I don’t know that we’ve fallen out of love. I think it’s more like we know it was and is there so we can feel it whenever we want to.</span>
+  and I’ll come in every now and again and drink coffee even though I don’t really like coffee that much and be friendly but shy with your coworkers and grade papers or something while you’re working and when you’re on your break we’ll sit and drink coffee together<sup>1</sup> and talk about how our days have been going and how much we’re looking forward to something, because, God, <span id="something">I want something to look forward to.</span> We’ll do this for a while and then we’ll gradually <span id="stop"><span id="stop-black"></span>stop</span><span id="pd">.</span></p> 
+
+  <p id="end">We’ll see less of each other for one reason or another and basically become more like friends who sleep together and fuck when so inclined<sup>2</sup> but otherwise carry on about their business<sup>3</sup>. I don’t know that we’ve fallen out of love. I think it’s more like we know it was and is there so we can feel it whenever we want to.
+  <span class="footnotes">
+      <br><br>
+      1. If you like coffee, I mean. I’m not trying to be presumptuous or anything.<br>
+      2. Did you ever see that show Melrose Place? That’s what I’ve got in mind, only it’s the two of us, and we’re not living around a pool.<br>
+      3. cf. This right here
+  </span>
   </p>
 
 </article>
@@ -95,21 +110,38 @@ layout: default
                 fade = 1 - pct_in_view;
             el.css({opacity: fade});
         },
+        stretch: function(el,multiplier,offset){
+            var pct_in_view = Dream.findElPct(el,multiplier,offset);
+            el.find("#stop-black").css({height: 400 * pct_in_view, top: el.offset().top});
+        },
         pushEnd: function(){
-            var pct_in_view = Dream.findElPct($("#end"),3,-60),
-                push_down = pct_in_view * $(window).height()/2;
-            console.log(pct_in_view,push_down);
+            var el_top = $("#end").offset().top;
+
+            $(window).on("scroll",_.throttle(function(){
+                var scroll_top = $(window).scrollTop(),
+                    height = $(window).height(),
+                    bottom = scroll_top + height;
+                if(bottom > el_top + 40 && bottom < el_top + 440){
+                    $("#end").css({position: "fixed", top: height - 40, width: $(".measure").width()});
+                } else if (bottom >= el_top + 440) {
+                    $("#end").css({position: "absolute", top: el_top + 400, width: $(".measure").width()});
+                } else {
+                    $("#end").css({position: "static"});
+               }
+            },50));
         }
     };
     $(function(){
         Dream.alternateRandomly($("#pivot"),0.5,0.8,"in","on");
+        Dream.pushEnd();
         $(window).on("scroll",_.throttle(function(){
             Dream.blacken($("#crying"),1.6,-120);
             Dream.blacken($("#true"),3,-400);
             Dream.blacken($("#whole"),3,-300);
             Dream.blacken($("#white"),2,-300);
+            Dream.blacken($("#coffee"),2.5,-300);
             Dream.fade($("#something"),0.8,-200);
-            Dream.pushEnd();
+            Dream.stretch($("#stop"),1,-100)
         },50))
     });
 </script>
