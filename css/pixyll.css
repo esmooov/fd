@@ -256,9 +256,6 @@ p{
 
 a.issue-link{
     color: hsl(0, 0%, 20%);
-    border-bottom: 1px solid #ddd;
-    display:block;
-    margin-bottom:1em;
 }
 
 a.post-link{
@@ -368,6 +365,60 @@ div.contributor-text{
 
 img.full-bleed{
   margin-bottom:2em;
+}
+
+.issue-card{
+    width:200px;
+    height:300px;
+    padding:20px;
+    display:inline-block;
+    overflow:hidden;
+    padding:10px;
+    box-sizing:border-box;
+    margin:25px;
+    position:relative;
+}
+.issue-card img{
+    width:200px;
+    position:absolute;
+    left:0;
+    top:0;
+}
+.issue-card-info{
+    position:absolute;
+    left:0;
+    top:0;
+    right:200px;
+    bottom:0;
+    -webkit-transition: right 0.35s linear;
+    transition: right 0.35s linear;
+    background-color:black;
+    color:white;
+    padding:10px;
+    overflow:hidden;
+    z-index:200;
+}
+.issue-card:hover .issue-card-info{
+    right:0;
+}
+
+.issue-card-info h2{
+    font-size:27px;
+    width:180px;
+}
+.issue-card-info h2.longer{
+    word-break:break-all;
+}
+
+.issue-card-info h3{
+    font-size:22px;
+    margin-top:20px;
+    width:180px;
+}
+
+.issue-card-info h4{
+    font-size:18px;
+    width:180px;
 }
 
 @media screen and (max-width: 48em) {

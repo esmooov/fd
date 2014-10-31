@@ -5,13 +5,16 @@ layout: default
 <div class="home">
   <div class="posts">
     {% for issue in site.data.issues %}
-      <a href="/issue/{{issue.number}}/" class="issue-link">
-        <div class="post {% if site.animated %}animated fade-in-down{% endif %}">
-            <h4 class="issue-num">Number {{ issue.number }}</h4>
-            <h2 class="h2 issue-title">{{ issue.title }}</h4>
-            <h3 class="subtitle">{{ issue.subtitle }}</h3>
+        <div class="issue-card">
+            <a href="/issue/{{issue.number}}/" class="issue-link">
+                <div class="issue-card-info">
+                    <h4 class="issue-num">Number {{ issue.number }}</h4>
+                    <h2 class="h2 issue-title{% if issue.longer_title %} longer{% endif %}">{{ issue.title }}</h4>
+                    <h3 class="subtitle">{{ issue.subtitle }}</h3>
+                </div>
+                <img class="issue-card-img" src="/images/{{issue.number}}-cover.png">
+            </a>
         </div>
-      </a>
     {% endfor %}
   </div>
 
